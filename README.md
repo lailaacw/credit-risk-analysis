@@ -1,68 +1,151 @@
-# Credit Risk Analysis using German Credit Dataset
+# 💳 Credit Risk Analysis & Loan Default Prediction
 
-## Objective
-Project ini bertujuan untuk menganalisis faktor-faktor yang mempengaruhi risiko kredit dan membangun model prediksi untuk mengidentifikasi nasabah berisiko (bad credit).
+> **End-to-End Credit Risk Analytics & Machine Learning Project**  
+> Predicting borrower credit risk to support data-driven lending decisions and minimize default risk.
 
-## Dataset
-- German Credit Dataset
-- 1000 observasi
-- 20+ variabel (demografi, kondisi finansial, dan karakteristik kredit)
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-ML-orange)
+![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-lightgrey)
+![Status](https://img.shields.io/badge/Status-Completed-success)
 
-## Key Findings
-- Status rekening (checking account) merupakan faktor paling dominan dalam menentukan risiko kredit  
-- Nasabah dengan tabungan rendah (<100 DM) memiliki probabilitas gagal bayar lebih tinggi  
-- Durasi kredit yang lebih panjang berkorelasi dengan peningkatan risiko  
-- Jumlah kredit (credit amount) yang lebih besar cenderung memiliki variasi risiko yang lebih tinggi  
-- Variabel pekerjaan tidak menunjukkan pengaruh signifikan terhadap risiko dibandingkan faktor likuiditas  
+---
 
-## Exploratory Data Analysis (EDA)
-Analisis menunjukkan bahwa risiko kredit tidak hanya dipengaruhi oleh satu variabel, tetapi oleh kombinasi beberapa faktor seperti:
-- Status rekening + durasi kredit  
-- Tabungan + kepemilikan rumah  
+# 📌 Project Overview
 
-Hal ini mengindikasikan adanya hubungan non-linear dalam data.
+Financial institutions face significant losses when loans are approved for high-risk borrowers. This project develops an end-to-end machine learning solution to assess borrower credit risk using demographic, financial, and credit history information.
 
-## Modeling
-Dua model digunakan:
+By combining exploratory data analysis, feature engineering, and predictive modeling, the project identifies the key characteristics associated with loan default while providing a practical framework for improving lending decisions.
 
-- Logistic Regression (untuk interpretabilitas)  
-- Random Forest (untuk performa prediksi)  
+The final models achieved approximately **79% ROC-AUC**, demonstrating reliable performance in distinguishing between low-risk and high-risk borrowers.
 
-### Model Performance (ROC-AUC)
-- Logistic Regression: ~0.79  
-- Random Forest: ~0.79  
+---
 
-Kedua model menunjukkan performa yang kompetitif.
-Both Logistic Regression and Random Forest show comparable performance (ROC-AUC ~0.79), with Logistic Regression offering better interpretability.
+# 🎯 Business Problem
 
-## Threshold Tuning
-Dilakukan penyesuaian threshold untuk meningkatkan kemampuan model dalam mendeteksi nasabah berisiko.
+Banks must balance loan growth with credit risk management. Poor lending decisions increase default rates, financial losses, and capital requirements.
 
-- Default threshold (0.5) cenderung lebih konservatif  
-- Threshold 0.4 memberikan trade-off terbaik antara recall dan precision  
+The objective of this project is to develop a predictive model capable of identifying high-risk applicants before loan approval, enabling financial institutions to make more informed and data-driven credit decisions.
 
-Recall untuk kategori bad meningkat secara signifikan tanpa penurunan performa yang drastis.
+---
 
+# 💼 My Role
 
-## Business Insight
-- Bank dapat meningkatkan deteksi risiko kredit dengan menyesuaikan threshold keputusan  
-- Nasabah dengan saldo rendah dan durasi kredit panjang perlu perhatian khusus  
-- Model dapat digunakan sebagai decision support system dalam proses persetujuan kredit  
-- Pendekatan ini membantu meminimalkan risiko kerugian akibat kesalahan klasifikasi nasabah berisiko  
+As the Data Analyst, I was responsible for:
 
-## Tools & Libraries
-- Python  
-- Pandas  
-- NumPy  
-- Scikit-learn  
-- Matplotlib & Seaborn  
+- Conducting Exploratory Data Analysis (EDA)
+- Cleaning and preprocessing credit datasets
+- Encoding categorical variables
+- Building predictive classification models
+- Comparing Logistic Regression and Random Forest performance
+- Evaluating models using ROC-AUC and classification metrics
+- Translating analytical findings into business recommendations
 
-## Conclusion
-Model yang dibangun mampu mengidentifikasi pola risiko kredit dengan cukup baik.  
-Penyesuaian threshold terbukti menjadi faktor penting dalam meningkatkan performa model, khususnya dalam mendeteksi nasabah berisiko tinggi.
+---
 
-## Next Improvement
-- Feature engineering tambahan  
-- Hyperparameter tuning  
-- Implementasi model ke dalam sistem real-time scoring  
+# 🔍 Key Insights
 
+The analysis revealed several important patterns affecting credit risk:
+
+### 💰 Financial Stability Matters
+
+Borrowers with stronger account balances and higher savings generally exhibited lower default risk.
+
+### ⏳ Longer Credit Duration Increases Risk
+
+Longer loan repayment periods were associated with higher probabilities of default.
+
+### 📉 Credit History Is a Strong Predictor
+
+Applicants with poor historical repayment behavior consistently showed higher credit risk.
+
+### 🏦 Employment Stability Improves Creditworthiness
+
+Borrowers with longer employment duration tended to demonstrate better repayment capability.
+
+### 📊 Multiple Financial Indicators Improve Prediction
+
+Combining demographic information, financial status, and borrowing history significantly improved model performance compared to relying on a single variable.
+
+---
+
+# 🤖 Machine Learning Models
+
+The following classification models were developed and evaluated:
+
+- Logistic Regression
+- Random Forest
+
+Threshold tuning was also performed to evaluate different trade-offs between precision and recall for practical credit risk classification.
+
+---
+
+# 📈 Model Performance
+
+| Metric | Logistic Regression | Random Forest |
+|---------|-------------------:|--------------:|
+| ROC-AUC | **0.790** | **0.795** |
+
+Both models demonstrated comparable predictive performance, with Random Forest providing slightly better discrimination of high-risk borrowers.
+
+---
+
+# 💡 Business Recommendations
+
+Based on the analytical findings, several recommendations were proposed:
+
+- Integrate predictive risk scoring into the loan approval process
+- Conduct additional verification for applicants classified as high-risk
+- Adjust lending policies based on borrower risk profiles
+- Develop differentiated interest rates according to predicted credit risk
+- Continuously retrain the model using updated borrower data
+
+---
+
+# 💥 Business Impact
+
+This project demonstrates how predictive analytics can support more objective and consistent credit assessment.
+
+The proposed approach enables financial institutions to:
+
+- Improve loan approval quality
+- Reduce potential default losses
+- Strengthen risk management practices
+- Support faster and more consistent lending decisions
+- Enhance portfolio quality through data-driven credit evaluation
+
+---
+
+# 🛠️ Technologies
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Scikit-Learn
+- Logistic Regression
+- Random Forest
+
+---
+
+# 📚 Skills Demonstrated
+
+- Exploratory Data Analysis (EDA)
+- Data Cleaning
+- Feature Engineering
+- Classification Modeling
+- Credit Risk Analytics
+- Model Evaluation
+- ROC-AUC Analysis
+- Threshold Optimization
+- Business Intelligence
+- Data Storytelling
+
+---
+
+# 📬 Contact
+
+**Laila Campaka Wangi**
+
+- LinkedIn: *https://www.linkedin.com/in/laila-campaka-b0921/*
+- Portfolio: *(https://laila-campaka.framer.website/))*
